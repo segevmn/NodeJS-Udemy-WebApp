@@ -1,0 +1,8 @@
+{
+  "env": {
+    "MONGO_USER": "segevminyan",
+    "MONGO_PASSWORD": "segevminyan",
+    "MONGO_DEF_DATABASE": "shop",
+    "STRIPE_KEY": "sk_test_51OxubMJcQDR1SfLLGRtGRg8kYP3Ga1JsTWL2X0H4jtHdSwYXy7BLI9PuLVzQcqewPi6ZoNWlaQpAMevfvgTSEI8U002ADelidS"
+  }
+}
