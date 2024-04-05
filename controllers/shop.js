@@ -16,8 +16,6 @@ exports.getCheckout = (req, res, next) => {
   let products;
   let sum = 0;
 
-  // 357. using stripe in your app
-
   req.user
     .populate('cart.items.productId')
     .then(user => {
