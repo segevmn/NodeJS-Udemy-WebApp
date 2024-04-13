@@ -58,76 +58,8 @@ exports.getCheckout = (req, res, next) => {
     });
 };
 
-// exports.getCheckout = (req, res, next) => {
-//   let products;
-
-//   let total = 0;
-
-//   req.user
-
-//     .populate('cart.items.productId')
-
-//     .then(user => {
-//       console.log(user.cart.items);
-
-//       products = user.cart.items;
-
-//       products.forEach(p => {
-//         total += +p.quantity * +p.productId.price;
-//       });
-
-//       return stripe.checkout.sessions.create({
-//         line_items: products.map(p => {
-//           return {
-//             price_data: {
-//               currency: 'eur',
-
-//               unit_amount: parseInt(Math.ceil(p.productId.price * 100)),
-
-//               product_data: {
-//                 name: p.productId.title,
-
-//                 description: p.productId.description,
-//               },
-//             },
-
-//             quantity: p.quantity,
-//           };
-//         }),
-
-//         mode: 'payment',
-
-//         success_url:
-//           req.protocol + '://' + req.get('host') + '/checkout/success', // => http://localhost:3000,
-
-//         cancel_url: req.protocol + '://' + req.get('host') + '/checkout/cancel',
-//       });
-//     })
-
-//     .then(session => {
-//       res.render('shop/checkout', {
-//         pageTitle: 'Checkout',
-
-//         path: '/checkout',
-
-//         products: products,
-
-//         productsSum: total.toFixed(2),
-
-//         sessionId: session.id,
-//       });
-//     })
-
-//     .catch(err => {
-//       const error = new Error(err);
-
-//       error.httpStatusCode = 500;
-
-//       return next(error);
-//     });
-// };
-
 // 357. using stripe in your app
+
 exports.getCheckoutSuccess = (req, res, next) => {
   req.user
     .populate('cart.items.productId')

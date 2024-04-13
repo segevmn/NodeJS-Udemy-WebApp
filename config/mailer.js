@@ -10,7 +10,15 @@ transporter = nodemailer.createTransport({
   auth: { user: senderMail, pass: applicationPassword },
 });
 
+// async
 delieverMail = emailOptions => {
+  // try {
+  //   await transporter.sendMail(emailOptions);
+  // } catch (err) {
+  //   console.error('Error sending mail', err);
+  //   throw err;
+  // }
+
   return transporter.sendMail(emailOptions);
 };
 
