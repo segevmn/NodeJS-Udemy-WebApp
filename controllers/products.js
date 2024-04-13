@@ -2,6 +2,7 @@ const Product = require('../models/product');
 const { err500 } = require('../utils/catchErrors');
 const { pagination } = require('../utils/managePagination');
 
+// async
 exports.getProducts = (req, res, next) => {
   const query = Product.find();
 
@@ -16,6 +17,7 @@ exports.getProducts = (req, res, next) => {
   );
 };
 
+// async
 exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
   Product.findById(prodId)

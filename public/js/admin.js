@@ -1,5 +1,6 @@
 // 349. Adding client side JS Code
 
+// async
 const deleteProduct = btn => {
   const productId = btn.parentNode.querySelector('[name=productId]').value;
   const doubleCsrf = btn.parentNode.querySelector('[name=csrfToken]').value;
