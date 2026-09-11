@@ -10,9 +10,6 @@ const fileHelper = require('../utils/fileDelete');
 const { pagination } = require('../utils/managePagination');
 
 exports.getAddProduct = (req, res, next) => {
-  if (!req.session.isLoggedIn) {
-    return res.redirect('/login');
-  }
   validateProdGet(res, '/admin/add-product', 'Add Product');
 };
 

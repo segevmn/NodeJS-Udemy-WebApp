@@ -8,4 +8,4 @@ exports.getMessgae = msg => {
   return message;
 };
 
-// move to controllers
+// move function to controllers

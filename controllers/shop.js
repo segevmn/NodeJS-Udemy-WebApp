@@ -11,7 +11,6 @@ exports.getIndex = (req, res, next) => {
   pagination(req, res, next, query, 'shop/index', 'Shop', '/shop');
 };
 
-// 356. adding a checkout page
 // async
 exports.getCheckout = (req, res, next) => {
   let products;
@@ -50,7 +49,6 @@ exports.getCheckout = (req, res, next) => {
       });
 
       return stripe.checkout.sessions.create({
-        // payment_method_types: ['card'],
         line_items: products.map(prod => {
           return {
             price_data: {
@@ -84,7 +82,6 @@ exports.getCheckout = (req, res, next) => {
     });
 };
 
-// 357. using stripe in your app
 // async
 exports.getCheckoutSuccess = async (req, res, next) => {
   // try {
